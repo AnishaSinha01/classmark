@@ -9,7 +9,7 @@ git+https://github.com/ageitgey/face_recognition_models
 setuptools
 
 supabase
-bycrpt
+bcrypt
 
 segno
 pillow
