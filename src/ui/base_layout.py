@@ -6,13 +6,13 @@ def style_background_home():
         <style>
 
         .stApp {
-        background: #5865F2 !important;
+        background: #6FA893 !important;
         }
 
         .stApp div[data-testid="stColumn"]{
-            background-color:#E0E3FF !important;
-            padding:2.5rem !important;
-            border-radius: 5rem !important;
+            background-color:#EAF3F0 !important;
+            padding:1.8rem !important;
+            border-radius: 2rem !important;
         }
 
         </style>
@@ -26,7 +26,7 @@ def style_background_dashboard():
         <style>
 
         .stApp {
-        background: #E0E3FF !important;
+        background: #EAF3F0 !important;
         }
 
         </style>
@@ -38,11 +38,11 @@ def style_base_layout():
     st.markdown(
         """
         <style>
-        @import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
-        /* Hide Top Bar of streamlit */
-
+         /* Hide Top Bar of streamlit */
+             
         #MainMenu, footer, header {
             visibility: hidden;
         }
@@ -52,14 +52,14 @@ def style_base_layout():
         }
         
         h1 {
-            font-family: 'Climate Crisis', sans-serif !important;
+            font-family: 'Fraunces', serif !important;
             font-size: 3.5rem !important;
             line-height: 1.1 !important;
             margin-bottom: 0rem !important;
         }
 
         h2 {
-            font-family: 'Climate Crisis', sans-serif !important;
+            font-family: 'Fraunces', serif !important;
             font-size: 2rem !important;
             line-height: 0.9 !important;
             margin-bottom: 0rem !important;
@@ -71,7 +71,7 @@ def style_base_layout():
 
         button {
             border-radius: 1.5rem !important; 
-            background: #5865F2 !important;
+            background-color: #35564E !important;
             color: white !important;
             padding: 10px 20px !important;
             border: none !important;
@@ -80,7 +80,7 @@ def style_base_layout():
 
         button[kind="secondary"] {
             border-radius: 1.5rem !important; 
-            background: #EB459E !important;
+            background-color: #C9A227 !important;
             color: white !important;
             padding: 10px 20px !important;
             border: none !important;
@@ -89,7 +89,7 @@ def style_base_layout():
 
         button[kind="tertiary"] {
             border-radius: 1.5rem !important; 
-            background: black !important;
+            background-color: #20342F !important;
             color: white !important;
             padding: 10px 20px !important;
             border: none !important;
@@ -99,6 +99,73 @@ def style_base_layout():
         button:hover{
             transform: scale(1.05)
         }
+
+        /* Text input styling */
+        .stTextInput input {
+            background-color: white !important;
+            border: 1px solid #C9E2DB !important;
+            border-radius: 0.8rem !important;
+            color: #20342F !important;
+        }
+
+        .stTextInput input::placeholder {
+            color: #8FA69E !important;
+            opacity: 1 !important;
+        }
+
+        h2 {
+        font-family: 'Fraunces', serif !important;
+        font-size: 2rem !important;
+        line-height: 0.9 !important;
+        margin-bottom: 0rem !important;
+        color: #20342F !important;
+        }
+
+        .stTextInput label p,
+        .stTextInput label,
+        label {
+        color: #20342F !important;
+        }
+
+        .stApp p, 
+        .stApp span, 
+        .stApp div[data-testid="stMarkdownContainer"] {
+            color: #20342F !important;
+        }
+
+        .stApp button, 
+        .stApp button * {
+            color: white !important;
+        }
+
+        /* Global Dialog/Modal Styling — applies to ALL st.dialog popups */
+        div[data-testid="stDialog"] div[role="dialog"] {
+            background-color: #20342F !important;
+            border-radius: 1.5rem !important;
+        }
+
+        div[data-testid="stDialog"] h1 {
+            color: #EAF3F0 !important;
+            font-family: 'Fraunces', serif !important;
+        }
+
+        div[data-testid="stDialog"] label,
+        div[data-testid="stDialog"] label p,
+        div[data-testid="stDialog"] p {
+            color: #C9E2DB !important;
+        }
+
+        div[data-testid="stDialog"] .stTextInput input {
+            background-color: white !important;
+            color: #20342F !important;
+            border-radius: 0.8rem !important;
+        }
+
+        div[data-testid="stDialog"] .stTextInput input::placeholder {
+            color: #8FA69E !important;
+            opacity: 1 !important;
+        }
+
 
         </style>
         """,
