@@ -8,7 +8,9 @@ import pandas as pd
 
 
 from src.components.dialog_attendance_results import show_attendance_result
-from datetime import datetime
+from src.database.db import now_ist_iso
+current_timestamp = now_ist_iso()
+
 @st.dialog('Voice Attendance')
 def voice_attendance_dialog(selected_subject_id):
     st.write('Record audio of students saying I am present. Then AI will recognize the students')
