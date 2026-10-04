@@ -1,6 +1,18 @@
 from src.database.config import supabase
 import bcrypt
+from datetime import datetime
+from zoneinfo import ZoneInfo
 
+IST = ZoneInfo("Asia/Kolkata")
+
+def now_ist_iso():
+    return datetime.now(IST).isoformat(timespec='seconds')
+
+def to_ist(ts):
+    dt = datetime.fromisoformat(ts)
+    if dt.tzinfo is not None:
+        dt = dt.astimezone(IST)
+    return dt
 
 
 def hash_pass(pwd):
