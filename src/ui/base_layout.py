@@ -138,32 +138,49 @@ def style_base_layout():
             color: white !important;
         }
 
-        /* Global Dialog/Modal Styling — applies to ALL st.dialog popups */
-        div[data-testid="stDialog"] div[role="dialog"] {
-            background-color: #20342F !important;
+        /* Global Dialog/Modal Styling: light dialog for ALL st.dialog popups */
+        div[role="dialog"] {
+            background-color: #FFFFFF !important;
             border-radius: 1.5rem !important;
         }
-
-        div[data-testid="stDialog"] h1 {
-            color: #EAF3F0 !important;
+        
+        div[role="dialog"] h1,
+        div[role="dialog"] h2,
+        div[role="dialog"] h3,
+        div[role="dialog"] h4 {
+            color: #20342F !important;
             font-family: 'Fraunces', serif !important;
         }
-
-        div[data-testid="stDialog"] label,
-        div[data-testid="stDialog"] label p,
-        div[data-testid="stDialog"] p {
-            color: #C9E2DB !important;
+        
+        div[role="dialog"] label,
+        div[role="dialog"] label p,
+        div[role="dialog"] p,
+        div[role="dialog"] span,
+        div[role="dialog"] li {
+            color: #20342F !important;
         }
-
-        div[data-testid="stDialog"] .stTextInput input {
+        
+        div[role="dialog"] [data-testid="stCaptionContainer"],
+        div[role="dialog"] [data-testid="stCaptionContainer"] * {
+            color: #5C7A72 !important;
+        }
+        
+        div[role="dialog"] .stTextInput input {
             background-color: white !important;
             color: #20342F !important;
+            border: 1px solid #C9E2DB !important;
             border-radius: 0.8rem !important;
         }
-
-        div[data-testid="stDialog"] .stTextInput input::placeholder {
+        
+        div[role="dialog"] .stTextInput input::placeholder {
             color: #8FA69E !important;
             opacity: 1 !important;
+        }
+        
+        /* buttons inside dialog stay white text */
+        div[role="dialog"] button,
+        div[role="dialog"] button * {
+            color: white !important;
         }
 
 
