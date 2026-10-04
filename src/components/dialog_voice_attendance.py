@@ -11,7 +11,19 @@ from src.components.dialog_attendance_results import show_attendance_result
 def voice_attendance_dialog(selected_subject_id):
     st.write('Record audio of students saying I am present. Then AI will recognize the students')
 
-    audio_data = st.audio_input("Record classroom audio")
+    if 'voice_audio_key' not in st.session_state:
+        st.session_state.voice_audio_key = 0
+
+    audio_data = st.audio_input(
+        "Record classroom audio",
+        key=f"voice_audio_{st.session_state.voice_audio_key}"
+    )
+
+    if audio_data:
+        if st.button("Clear recording", key="clear_voice_audio", type="tertiary", icon=":material/delete:", width='stretch'):
+            st.session_state.voice_attendance_results = None
+            st.session_state.voice_audio_key += 1
+            st.rerun(scope="fragment")
 
     if st.button('Analyze Audio', width='stretch', type='primary'):
         st.session_state.voice_attendance_results = None
